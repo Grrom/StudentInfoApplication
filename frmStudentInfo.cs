@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Student;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,16 @@ namespace StudentInfoApplication
             InitializeComponent();
         }
 
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            insertToLists(new StudentInfo(studentId.Text, lastName.Text, firstName.Text));
+        }
+
+        private void insertToLists(StudentInfo infos)
+        {
+            studentIds.Items.Add(infos.StudentId);
+            firstNames.Items.Add(infos.FirstName);
+            lastNames.Items.Add(infos.LastName);
+        }
     }
 }

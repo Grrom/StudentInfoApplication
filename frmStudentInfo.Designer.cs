@@ -35,13 +35,13 @@ namespace StudentInfoApplication
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.studentIdList = new System.Windows.Forms.TextBox();
-            this.firstNameList = new System.Windows.Forms.TextBox();
-            this.lastNameList = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
+            this.studentIds = new System.Windows.Forms.ListBox();
+            this.firstNames = new System.Windows.Forms.ListBox();
+            this.lastNames = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // studentId
@@ -88,60 +88,36 @@ namespace StudentInfoApplication
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(561, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
+            this.label3.Size = new System.Drawing.Size(69, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "First Name";
-            // 
-            // studentIdList
-            // 
-            this.studentIdList.Location = new System.Drawing.Point(13, 155);
-            this.studentIdList.Multiline = true;
-            this.studentIdList.Name = "studentIdList";
-            this.studentIdList.Size = new System.Drawing.Size(227, 283);
-            this.studentIdList.TabIndex = 6;
-            // 
-            // firstNameList
-            // 
-            this.firstNameList.Location = new System.Drawing.Point(287, 155);
-            this.firstNameList.Multiline = true;
-            this.firstNameList.Name = "firstNameList";
-            this.firstNameList.Size = new System.Drawing.Size(227, 283);
-            this.firstNameList.TabIndex = 7;
-            // 
-            // lastNameList
-            // 
-            this.lastNameList.Location = new System.Drawing.Point(561, 155);
-            this.lastNameList.Multiline = true;
-            this.lastNameList.Name = "lastNameList";
-            this.lastNameList.Size = new System.Drawing.Size(227, 283);
-            this.lastNameList.TabIndex = 8;
+            this.label3.Text = "First Name*";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(83, 15);
             this.label4.TabIndex = 9;
-            this.label4.Text = "label4";
+            this.label4.Text = "Student ID List";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(287, 137);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
+            this.label5.Size = new System.Drawing.Size(85, 15);
             this.label5.TabIndex = 10;
-            this.label5.Text = "label5";
+            this.label5.Text = "First Name List";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(561, 137);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.Size = new System.Drawing.Size(84, 15);
             this.label6.TabIndex = 11;
-            this.label6.Text = "label6";
+            this.label6.Text = "Last Name List";
             // 
             // submitButton
             // 
@@ -151,19 +127,47 @@ namespace StudentInfoApplication
             this.submitButton.TabIndex = 12;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            // 
+            // studentIds
+            // 
+            this.studentIds.FormattingEnabled = true;
+            this.studentIds.ItemHeight = 15;
+            this.studentIds.Location = new System.Drawing.Point(12, 155);
+            this.studentIds.Name = "studentIds";
+            this.studentIds.Size = new System.Drawing.Size(227, 274);
+            this.studentIds.TabIndex = 13;
+            // 
+            // firstNames
+            // 
+            this.firstNames.FormattingEnabled = true;
+            this.firstNames.ItemHeight = 15;
+            this.firstNames.Location = new System.Drawing.Point(287, 155);
+            this.firstNames.Name = "firstNames";
+            this.firstNames.Size = new System.Drawing.Size(227, 274);
+            this.firstNames.TabIndex = 14;
+            // 
+            // lastNames
+            // 
+            this.lastNames.FormattingEnabled = true;
+            this.lastNames.ItemHeight = 15;
+            this.lastNames.Location = new System.Drawing.Point(560, 155);
+            this.lastNames.Name = "lastNames";
+            this.lastNames.Size = new System.Drawing.Size(227, 274);
+            this.lastNames.TabIndex = 15;
             // 
             // frmStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lastNames);
+            this.Controls.Add(this.firstNames);
+            this.Controls.Add(this.studentIds);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lastNameList);
-            this.Controls.Add(this.firstNameList);
-            this.Controls.Add(this.studentIdList);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -185,13 +189,13 @@ namespace StudentInfoApplication
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox studentIdList;
-        private System.Windows.Forms.TextBox firstNameList;
-        private System.Windows.Forms.TextBox lastNameList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.ListBox studentIds;
+        private System.Windows.Forms.ListBox firstNames;
+        private System.Windows.Forms.ListBox lastNames;
     }
 }
 
